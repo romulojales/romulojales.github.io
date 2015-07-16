@@ -21,6 +21,8 @@ authorEmail:    'romulo@romulojales.com'
 
 permalink:       /:title/
 
+locale: "pt-br"
+
 defaults:
     -
         scope:
