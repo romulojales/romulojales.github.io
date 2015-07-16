@@ -8,6 +8,7 @@ Olá meu nome é Rômulo Jales (¬¬), sou engenheiro da computação e tenho pa
 
 Caso queira discutir idéias, soluções, problemas... sinta-se livre para entrar em contato!
 
+
 ##Redes sociais
 
 * [twitter][twitter]
