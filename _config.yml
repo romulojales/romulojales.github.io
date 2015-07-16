@@ -17,6 +17,7 @@ disqus_shortname: 'romulojales'
 url:            'http://romulojales.com'
 author:         'Rômulo Jales'
 authorTwitter:  'romulojales'
+authorEmail:    'romulo@romulojales.com'
 
 permalink:       /:title/
 

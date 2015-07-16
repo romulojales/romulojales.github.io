@@ -1,9 +1,9 @@
 ---
-title: About
-permalink: about/
+title: Sobre
+permalink: sobre/
 profile: true
 ---
 
-This is a static page. It could be an 'about page' if you'd like.
+Olá meu nome é Rômulo Jales (¬¬)
 
 {% include footer.html %}
