@@ -1,7 +1,7 @@
 ---
 title:  "GOLANG: uma jornada se inicia"
 date:   2015-07-19 01:00:00
-description: ""
+description: "Um brevissimo resumo da linguagem GO e porque irei a fundo nela."
 disqus:
 ---
 
