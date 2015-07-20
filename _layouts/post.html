@@ -26,11 +26,10 @@ archive: true
         {% include share.html %}
     </section>
 </footer>
-
 <!-- Disqus comments -->
-{% if page.disqus %}
+{% if page.comments %}
     <div class="archive readmore">
-        <h3>Comments</h3>
+        <h3>Comentários</h3>
         {% include disqus.html %}
     </div>
 {% endif %}
@@ -38,7 +37,7 @@ archive: true
 <!-- Archive post list -->
 {% if page.archive %}
     <ul id="post-list" class="archive readmore">
-        <h3>Read more</h3>
+        <h3>Leia mais</h3>
         {% for post in site.posts %}
             <li>
                 <a href="{{ post.url }}">{{ post.title }}<aside class="dates">{{ post.date | date:"%b %d" }}</aside></a>
@@ -46,6 +45,3 @@ archive: true
         {% endfor %}
     </ul>
 {% endif %}
-
-
-
