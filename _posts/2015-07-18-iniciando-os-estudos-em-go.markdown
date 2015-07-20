@@ -7,7 +7,7 @@ disqus:
 
 [GOLANG][go-link], ou simplesmente GO, é uma linguagem de programação desenvolvida pelo google para o google.
 
-Um grupo de desenvolvedores do google estava insatisfeito as opções de
+Um grupo de desenvolvedores do google estava insatisfeito com as opções de
 linguagens e sistemas existentes para produzir sistemas para o google. Problemas como:
 
 * dificuldade de compilar/deployar um projeto grande
@@ -19,11 +19,11 @@ desenharam em 2007 os objetivos de uma nova linguagem.
 Em 2008 o projeto ganhou dedicação exclusiva e em 2009 tornou-se público, cujo os objetivos principais são prover uma linguagem:
 
 * Com rápida compilação
-* Com análize de dependência fácil
+* Com análise de dependência fácil
 * Tendo garbage-collection
 * Multiprogramação já no design da linguagem
 
-Por tanto podemos resumir em uma linha que GO é:
+Portanto podemos resumir em uma linha que GO é:
 
 **Uma linguagem compilada, com suporte a concorrência nativo, com garbage-collection e com tipagem estática**
 
