@@ -13,7 +13,7 @@ Para não fugir do lugar comum, vou mostrar o que é necessário para ter um hel
 
 ###No mac
 
-Para instalar o go no mac o caminho mais curto é usando o usando o [pacote oficial][golang-dl] distribuído no site do golang.
+Para instalar o go no mac o caminho mais curto é usando o [pacote oficial][golang-dl] distribuído no site do golang.
 Escolha o arquivo de extensão .pkg e seja feliz.
 
 Mas eu prefiro caminho via [brew][brew-home], uma vez que eu o utilizo para instalar facilmente outros programas que não tem a facilidade
