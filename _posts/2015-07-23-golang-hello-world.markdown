@@ -1,6 +1,6 @@
 ---
 title:  "Golang: Hello World"
-date:   2015-07-16 02:06:00
+date:   2015-07-23 23:00:00
 description: "hello world do golang"
 comments: true
 ---
@@ -78,7 +78,7 @@ Por fim, o comando go run hello-world.go executa o arquivo hello-world.go .
 
 ##compilando
 
-Você pode ter lido no meu primeiro [post]{% post_url 2015-07-18-iniciando-os-estudos-em-go %} sobre go, que a linguagem
+Você pode ter lido no meu primeiro <a href="/iniciando-os-estudos-em-go/">post</a> sobre go, que a linguagem
 compilada. 
 
 Para compilar o programa, faça:
