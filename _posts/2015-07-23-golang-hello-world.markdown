@@ -52,7 +52,7 @@ para rodar o seu programa:
 go run hello-world.go
 {% endhighlight %}
 
-O resultado esperado é que você veja Hello World impresso.
+O resultado esperado é que você veja *Hello World* impresso.
 
 ###Explicando
 
