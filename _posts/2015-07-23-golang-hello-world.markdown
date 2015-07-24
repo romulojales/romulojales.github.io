@@ -56,7 +56,7 @@ O resultado esperado é que você veja Hello World impresso.
 
 ###Explicando
 
-Este pequeno programa já tem algumas informações bem importante a cerca da estrutura do go. 
+Este pequeno programa já tem algumas informações bem importantes a cerca da estrutura de um programa go. 
 
 A primeira linha contém o pacote do programa. O nome main não foi aleatório. Ele é necessário para dizer ao go que este é o pacote
 que deve ser utilizado para iniciar o programa. Portanto, "package main" serve para dizer onde está o inicio de um programa go.
