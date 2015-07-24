@@ -5,7 +5,7 @@ description: "hello world do golang"
 comments: true
 ---
 
-Geralmente as linguagens de programação iniciamos o aprendizado com o objetivo de escrever na tela do usuário "Hello World!".
+Geralmente, em linguagens de programação, iniciamos o aprendizado com o objetivo de escrever na tela do usuário "Hello World!".
 
 Para não fugir do lugar comum, vou mostrar o que é necessário para ter um hello world via go.
 
@@ -16,7 +16,7 @@ Para não fugir do lugar comum, vou mostrar o que é necessário para ter um hel
 Para instalar o go no mac o caminho mais curto é usando o usando o [pacote oficial][golang-dl] distribuído no site do golang.
 Escolha o arquivo de extensão .pkg e seja feliz.
 
-Mas eu prefiro caminho via [brew][brew-home], uma vez que eu o utilizo para instalar facilmente outros progrmas que não tem a facilidade
+Mas eu prefiro caminho via [brew][brew-home], uma vez que eu o utilizo para instalar facilmente outros programas que não tem a facilidade
 de um pacote pronto. Para tal:
 
 {% highlight bash %}
