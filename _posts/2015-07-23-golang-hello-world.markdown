@@ -79,7 +79,7 @@ Por fim, o comando go run hello-world.go executa o arquivo hello-world.go .
 ##compilando
 
 Você pode ter lido no meu primeiro <a href="/iniciando-os-estudos-em-go/">post</a> sobre go, que a linguagem
-compilada. 
+é compilada. 
 
 Para compilar o programa, faça:
 
