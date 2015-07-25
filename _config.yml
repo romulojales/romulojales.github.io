@@ -9,10 +9,10 @@ highlighter: pygments
 
 paginate: 20
 baseurl: 'http://romulojales.com/'
-domain_name: 'romulojales.com'
+domain_name: 'http://romulojales.com'
 google_analytics: 'UA-38627485-1'
 disqus_shortname: 'romulojales'
-
+twitter_url: 'http://romulojales.com'
 # Details for the RSS feed generator
 url:            'http://romulojales.com/'
 author:         'Rômulo Jales'
