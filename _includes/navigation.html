@@ -1,12 +1,12 @@
 <nav class="main-nav">
     {% if page.url != "/index.html" %}
-        <a href='{{ site.baseurl }}{{ page.about }}'> <span class="arrow">←</span> Home </a>
+        <a href='{{ site.url }}/{{ page.about }}'> <span class="arrow">←</span> Home </a>
     {% endif %}
 
     {% if page.url != "/sobre/" %}
         {% if site.aboutPage %}
-            <a href='{{ site.baseurl }}sobre'>Sobre </a>
+            <a href='{{ site.url }}/sobre'>Sobre </a>
         {% endif %}
     {% endif %}
-    <a class="cta" href="{{ site.baseurl }}feed.xml">feed</a>
+    <a class="cta" href="{{ site.url }}/feed.xml">feed</a>
 </nav>
