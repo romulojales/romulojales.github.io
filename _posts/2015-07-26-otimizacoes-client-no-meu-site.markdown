@@ -57,6 +57,9 @@ site. E anotei alguns pontos chaves:
   * Js não minificado
   * Html não minificado
 
+Do ponto de vista de backend, não há o que otimizar. O site já está na forma ótima para internet e como uso o github pages
+não tenho acesso a nenhuma configuração em termos de máquinas e servidores.
+
 #CSS
 
 Como trabalho com web sei que existem algumas regras básicas ao lidar com carregamento de css:
