@@ -8,8 +8,9 @@ comments: true
 #TL;TR
 Eu fiz os seguintes passos para otimizar a performance do meu blog:
 
-* Minifiquei dos css e js
+* Minifiquei dos css
 * Removi o jquery
+* Otimizei imagens para retina display.
 * Minifiquei o html
 
 ##Resultado:
@@ -17,35 +18,37 @@ Eu fiz os seguintes passos para otimizar a performance do meu blog:
 Utilizei como benchmark a seguinte o post que falo de como fazer [hello world usando golang](/golang-hello-world/): 
 
 * De duas requisições de css para uma
-* De 13,7 kb de tamanho de css para 
+* De 13,7 kb de tamanho de css para 10,7kb
+* Para o caso de uso de js, de 46,3kb para 11,4kb.
+* Redução de 12% no tamanho do markup
 
 ##Trabalhos futuros
 
-Como melhorar o carregamento do disqus
+Melhorar o html e o css.
 
 #Discussão
 
 Quando eu voltei a blogar, acho que esta é minha quarta tentativa, decidi que a estrutura necessária para o blog seria a
-mais simples possível. Não queria gastar dinheiro com hospedagem do blog, me preocupar com software, atualizações, banco
+mais simples possível. Não queria gastar dinheiro com hospedagem do blog, me preocupar com software, atualizações e banco
 de dados. Queria, e ainda quero, é apenas focar em escrever. 
 
 Como alguns amigos na globo estavam usando o [Jekyll](http://jekyllrb.com) e [github pages](https://pages.github.com),
 decidi avaliar estas opções.
  
 O Jekyll é um gerador de páginas estáticas escrito em ruby. Ou seja, você escreve na sua máquina um post em [markdown](http://daringfireball.net/projects/markdown/)
-ou [rst](http://docutils.sourceforge.net/rst.html) e o Jekyll trata de gerar um html completo do seu portal. Portanto,
+ou [rst](http://docutils.sourceforge.net/rst.html) e o Jekyll trata de gerar um html completo do seu blog. Portanto,
 não preciso de um software rodando na internet e nem suas dependências. Tudo estático. Mas ainda é necessário servir para
 a internet estes htmls. Ai entra o github pages. 
  
 O github pages olha para um repositório no github e usando uma estrutura de arquivos e pastas, bem acoplada ao que
  o jekyll depende, gera o html final, tal qual o jekyll. Assim, eu consigo manter meus posts num repositório na internet,
-  salvo de problemas eventuais na minha máquina, e ainda sirvo meu blog. E o melhor, sem custos financeiros.
+  salvo de problemas eventuais na minha máquina e ainda sirvo meu blog. E o melhor, sem custos financeiros.
   
 Mas ainda é necessário investir tempo na escolha de um tema bacana para o blog, obeservar se é responsivo e ficar de olho
 nas métricas de perfomance e SEO.
 
-Eu escolhi o [Cactus](https://github.com/koenbok/Cactus) como tema. Minalista, responsivo, já integrado com pygments e 
-coloração de sintaxe de linguagens de programação. Tudo que precisava.
+Eu escolhi o [Cactus](https://github.com/koenbok/Cactus) como tema. Minalista, responsivo, já integrado com pygments - para 
+coloração de sintaxe de linguagens de programação-. Tudo que precisava.
 
 Depois que botei o blog no ar e alguns posts - para dar uma animada - passei a olhar a performance de carregamento do
 site. E anotei alguns pontos chaves:
@@ -69,13 +72,12 @@ Ao analisar o tema que escolhi tinha para css vi que:
 * O css já estava no topo da página. - OK
 * dois arquivos de css sendo carregados - Não tão OK
 * não estavam minificados - NOK
-* não estavam comprimidos. - NOK
 
 O primeiro passo foi minificar o CSS. Minificar é um processamento do arquivo para remover todos os espaços em brancos 
 e caracteres, como quebra de linha (\n), não necessários. A primeira abordagem que pensei foi copiar e colar numa destes
 sites que fazem a minificação. Mas e se eu precisar modificar o css? Vai ser um inferno. Assim, também resolvi atacar outro
 problema, não relacionado a performance de load, mas de gerência de código. Criei a estrutura de [scss](http://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html)
-para o meu projeto. O Jekyll suporta scss nativamente.
+para o meu projeto. 
 
 Assim, antes tinha:
 
@@ -86,11 +88,11 @@ Assim, antes tinha:
     |- highlight.css
 {% endhighlight %}
 
-O arquivo style.css tem 12,3kb e o highlight tem 1,4k. O problema em si não é tão o tamanho dos arquivos mas a necessidade de 
-fazer duas requisições, além do que quando o browser encontra a diretiva de carregamento do css ele para o carregamento
+O arquivo style.css tem 12,3kb e o highlight tem 1,4k. O maior problema aqui não é tão o tamanho dos arquivos, mas a necessidade de 
+fazer duas requisições. Além do que, quando o browser encontra a diretiva de carregamento do css ele para o carregamento
 da página até tê-lo no contexto.
 
-Então tenho que ter apenas um arquivo. Poderia até por inline no html. Mas isto não é uma boa prática.
+Então, tenho que ter apenas um arquivo! Poderia até por inline no html. Mas isto não é uma boa prática.
 
 Agora tenho:
   
@@ -102,7 +104,7 @@ Agora tenho:
 
 Dentro do arquivo estilo.scss
 
-{% highlight scss lineno %}
+{% highlight scss %}
 ---
 --- 
 @import "style";
@@ -110,12 +112,13 @@ Dentro do arquivo estilo.scss
 {% endhighlight %}
 
 Os @imports são diretivas do scss para incluir outros scss, que são exatamente os arquivos style.css e
-highlight.css. No momento eu só fiz renomea-los da extensão .css para .scss e movi para outro pasta.
+highlight.css. No momento eu só fiz renomear a extensão de .css para .scss e mover para outra pasta.
 
-Já as duas linhas com "---" são necessárias para informar ao jekyll que o arquivo estilo.scss deve ser processada como um
-arquivo final, que vai entrar na estrutura final do blog.
+Já as duas linhas com "---" no início do arquivo são necessárias para informar ao jekyll que o arquivo estilo.scss deve
+ser processada como um arquivo final, que vai entrar na estrutura final do blog. O legal é que o jekyll já suporta nativamente
+o sass.
 
-A nova estrutura de diretórios:
+Logo, a nova estrutura de diretórios ficou:
 
 {% highlight bash %}
    |- _sass/
@@ -123,8 +126,8 @@ A nova estrutura de diretórios:
     |- _highlight.scss
 {% endhighlight %}
 
-O jekyll irá compilar os arquivos scss num único arquivo estilo.css. Já no html tenho que mudar para a nova forma de inserir
-os estilos
+O jekyll irá compilar os arquivos scss num único arquivo estilo.css. Mas ainda tenho que mudar no html para o novo arquivo de
+estilos:
 
 De:
 {% highlight html %}
@@ -136,18 +139,18 @@ Para:
   <link rel="stylesheet" href="/assets/css/estilo.css">
 {% endhighlight %}
 
-Resolvido o problema de ter dois arquivos de css. Mas ainda faltava o problema da minificação do arquivo. 
+Resolvido o problema de ter dois arquivos de css. Ainda faltava o problema da minificação do arquivo. 
 
-Com jekyll foi extremamente simples de resolver. Bastou adicionar no _config.yml o bloco:
+Com jekyll foi extremamente simples de resolver. Bastou adicionar no \_config.yml o bloco:
 
 {% highlight yaml %}
 sass:
     style: :compressed
 {% endhighlight %}
 
-Que reduziu o arquivo de 13,4kb para 10,7kb, uma redução de aproxidamente 20%.
+Que reduziu o arquivo de 13,4kb para 10,7kb, aproxidamente 20%.
 
-Nada mal, de dois arquivos para apenas um com redução de 20%?! Isto não pode parecer muito. Mas a técnica usada é escalável
+Nada mal! De dois arquivos para apenas um, com redução de 20%! Isto pode não parecer muito. Mas a técnica usada é escalável
 e é usada por exemplo no globoesporte.com, portal para o qual trabalho.
 
 #Javascript
@@ -164,7 +167,7 @@ Quais os impactos desta abordagem:
 
 * Carregar duas vezes uma imagem de valor semântico igual
 * Se o javascript der erro ou estiver desabilitado, o efeito é nulo
-* Carregar o jquery apenas para substituição da imagem.
+* Carregar o jquery apenas para substituição de imagem? WTF!
 
 Existem outra técnicas para assegurar que a imagem será a melhor no retina. A que eu escolhi foi ofertar imagens com as dimensões
 sendo o dobro da necessidade. Exemplo, meu avatar na home precisa de uma imagem 80x80, então vou ofertar uma imagem de 160x160.
@@ -176,12 +179,11 @@ Você pode está se afirmando: "opa, ele está aumentando o peso da página sem 
   
 Antes deste post eu tinha duas imagens para o avatar com densidades diferentes. Uma de 80x80 com 3,8Kb e outra de 160x160
 com 12,4kb. Ou seja, caso o js detectasse que era uma tela retina, só para mostrar o meu avatar seria necessário baixar 16,8kb
-só de imagem, além do jquery, 29,3kb, e do outro js de processamento (0,7kb). Totalizando 46,3kb. Usando a abordagem de 
-uma imagem dimensionada baixo apenas 11,4kb para qualquer caso.
+só de imagem, além do jquery: 29,3kb; e do outro js de processamento: 0,7kb. Totalizando 46,3kb. Usando a abordagem de 
+uma imagem dimensionada baixo apenas 11,4kb para qualquer caso!
 
-Ainda tive mais uma oportunidade de performance que foi por o js de highlight em modo defer. Outros js que preciso são o do
+Ainda tive mais uma oportunidade de performance que foi por o js de highlight em modo defer. Outros js que preciso, são o do
 google analytics e do disqus que já estão em sua forma recomendada.
-
 
 #HTML
 
@@ -248,5 +250,8 @@ resultou em:
 
 * Três requisições a menos
 * Melhora na renderização da página com menos elementos bloqueantes
-* Redução de 360kb para 330Kb, 8% de melhoria global.
+* Redução de 360kb para 330Kb, 8% de melhora global para o post.
 
+De modo geral, o trabalho de otimização foi bom e a escolha pela dupla jekyll + github pages foi boa. 
+
+O próximo passo é tentar melhorar o css e o markup e fontes que vieram com o tema que escolhi.
