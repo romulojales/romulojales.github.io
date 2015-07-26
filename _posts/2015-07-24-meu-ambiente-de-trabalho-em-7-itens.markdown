@@ -19,7 +19,7 @@ Logo quando cheguei na empresa eu quis usar o mac porque até
   de configurar no linux eram o wifi e a camera. E no macbook já vinha configurado por padrão. Então tinha finalmente um
    desktop (notebook) com linha de comando disponível!
    
-#2 - Pycharm (e outras ferramentas da intellij), como IDE
+#2 - Pycharm (e outras ferramentas da jetbrains), como IDE
 
 Apesar de desenvolvedor vindo do linux desde cedo e já tendo usado bastante o VIM, quando eu conheci o pycharm e passei a
  usa-lo senti minha produtividade aumentar muito. Por sinal a liberdade de escolha das ferramentas é outra vantagem de
