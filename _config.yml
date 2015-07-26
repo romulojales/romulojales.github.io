@@ -38,3 +38,14 @@ defaults:
 
 gems:
   - jekyll-sitemap
+
+sass:
+    style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+exclude: ["Gemfile.lock", "Gemfile", "README.md", "CNAME", "LICENSE"]

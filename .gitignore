@@ -57,3 +57,7 @@ docs/_build/
 target/
 
 _site/*
+
+.DS_Store
+
+.sass-cache/
