@@ -246,4 +246,7 @@ intenso pode resultar em economia de dinheiro.
 Para a página [hello world usando golang](/golang-hello-world/) todo o esforço, sem considerar o disqus e o google analytics,
 resultou em:
 
-* Três requests a menos
+* Três requisições a menos
+* Melhora na renderização da página com menos elementos bloqueantes
+* Redução de 360kb para 330Kb, 8% de melhoria global.
+
