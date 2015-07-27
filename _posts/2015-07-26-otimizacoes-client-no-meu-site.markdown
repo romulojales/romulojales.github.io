@@ -15,7 +15,7 @@ Eu fiz os seguintes passos para otimizar a performance do meu blog:
 
 ##Resultado:
 
-Utilizei como benchmark a seguinte o post que falo de como fazer [hello world usando golang](/golang-hello-world/): 
+Utilizei como benchmark o post que falo como fazer [hello world usando golang](/golang-hello-world/): 
 
 * De duas requisições de css para uma
 * De 13,7 kb de tamanho de css para 10,7kb
