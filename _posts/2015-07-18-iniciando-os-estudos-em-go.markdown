@@ -1,7 +1,7 @@
 ---
 title:  "GOLANG: uma jornada se inicia"
 date:   2015-07-19 01:00:00
-description: "Um brevissimo resumo da linguagem GO e porque irei a fundo nela."
+description: "Um brevíssimo resumo da linguagem GO e porque irei a fundo nela."
 comments: true
 ---
 
@@ -41,7 +41,7 @@ De fato, tendo este conjunto de soluções já nativa à linguagem e não provid
 engenharia. (mas lembrem-se que não há bala de prata)
 
 Diante da natureza da linguagem orientada a resolver problemas já conhecidos e que outras ferramentas não tiveram
-sucesso em endereçar (além da necessidade de extender um software já desenvolvido em go), iniciarei uma série de estudos
+sucesso em endereçar (além da necessidade de estender um software já desenvolvido em go), iniciarei uma série de estudos
 desta linguagem.
 
 ##maiores informações:

@@ -44,10 +44,10 @@ O github pages olha para um repositório no github e usando uma estrutura de arq
  o jekyll depende, gera o html final, tal qual o jekyll. Assim, eu consigo manter meus posts num repositório na internet,
   salvo de problemas eventuais na minha máquina e ainda sirvo meu blog. E o melhor, sem custos financeiros.
   
-Mas ainda é necessário investir tempo na escolha de um tema bacana para o blog, obeservar se é responsivo e ficar de olho
-nas métricas de perfomance e SEO.
+Mas ainda é necessário investir tempo na escolha de um tema bacana para o blog, observar se é responsivo e ficar de olho
+nas métricas de performance e SEO.
 
-Eu escolhi o [Cactus](https://github.com/koenbok/Cactus) como tema. Minalista, responsivo, já integrado com pygments - para 
+Eu escolhi o [Cactus](https://github.com/koenbok/Cactus) como tema. Minimalista, responsivo, já integrado com pygments - para 
 coloração de sintaxe de linguagens de programação-. Tudo que precisava.
 
 Depois que botei o blog no ar e alguns posts - para dar uma animada - passei a olhar a performance de carregamento do
@@ -151,7 +151,7 @@ sass:
     style: :compressed
 {% endhighlight %}
 
-Que reduziu o arquivo de 13,4kb para 10,7kb, aproxidamente 20%.
+Que reduziu o arquivo de 13,4kb para 10,7kb, aproximadamente 20%.
 
 Nada mal! De dois arquivos para apenas um, com redução de 20%! Isto pode não parecer muito. Mas a técnica usada é escalável
 e é usada por exemplo no globoesporte.com, portal para o qual trabalho.
@@ -174,7 +174,7 @@ Quais os impactos desta abordagem:
 
 Existem outra técnicas para assegurar que a imagem será a melhor no retina. A que eu escolhi foi ofertar imagens com as dimensões
 sendo o dobro da necessidade. Exemplo, meu avatar na home precisa de uma imagem 80x80, então vou ofertar uma imagem de 160x160.
-Você pode está se afirmando: "opa, ele está aumentando o peso da página sem necessidade". Mas na computapação tudo é uma 
+Você pode está se afirmando: "opa, ele está aumentando o peso da página sem necessidade". Mas na computação tudo é uma 
   questão de medir a relação custo benefício. Eu sei que para uma pessoa nova entrando no meu site ela irá pagar o custo 
   desta imagem maior, mas a tendência a longo prazo que a imagem estará cacheada no browser (já que esta imagem não será 
   mudada com tanta frequência e ela é transversal ao blog). E esta abordagem é melhor que usar um js, que demandará toda vez
@@ -219,7 +219,7 @@ regulares "<!-- isto é um comentário regular --!>" você usa a valor para comm
 **clippings**, são as tags que podem ter seus espaços em brancos removidos, já considerando o caso da tag pre. Caso, você
 queira ser explicito, enumere uma a uma dentro da lista.
 
-Por fim, é necessário preparar o html. É necessario usar o arquivo compress.html do jekyll compress e adiciona-lo a pasta
+Por fim, é necessário preparar o html. É necessário usar o arquivo compress.html do jekyll compress e adiciona-lo a pasta
 _layout:
 
 {% highlight bash %}

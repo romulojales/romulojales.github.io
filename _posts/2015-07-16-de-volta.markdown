@@ -5,8 +5,8 @@ description: "tudo culpa do bill"
 comments: true
 ---
 
-Incentivado por [Willian Justen][bill-page] voltarei a blogar (Valeu Bill!). A idéia é manter o blog atualizado discutindo sempre o
-dia a dia do meu trabalho e opinões que eu acho pertinente compartilhar.
+Incentivado por [Willian Justen][bill-page] voltarei a blogar (Valeu Bill!). A ideia é manter o blog atualizado discutindo sempre o
+dia a dia do meu trabalho e opiniões que eu acho pertinente compartilhar.
 
 Vamos lá!
 

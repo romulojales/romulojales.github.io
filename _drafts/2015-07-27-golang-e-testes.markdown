@@ -307,7 +307,7 @@ func TestDivide(t *testing.T){
 }
 {% endhighlight %}
 
-{% hightlight bash %}
+{% highlight bash %}
 go test
 PASS
 ok  	_/inteiros	0.040s
@@ -326,7 +326,7 @@ func TestDividePorZero(t *testing.T){
 }
 {% endhighlight %}
 
-{% hightlight bash %}
+{% highlight bash %}
 go test
 --- FAIL: TestDividePorZero (0.00s)
 panic: runtime error: integer divide by zero [recovered]
@@ -388,7 +388,7 @@ func TestDividePorZero(t *testing.T){
 	}
 }
 {% endhighlight %}
-{% hightlight bash %}
+{% highlight bash %}
 
 go test
 --- FAIL: TestDividePorZero (0.00s)
@@ -409,7 +409,7 @@ func TestDividePorZero(t *testing.T){
 	}
 }
 {% endhighlight %}
-{% hightlight bash %}
+{% highlight bash %}
 
 go test
 PASS
