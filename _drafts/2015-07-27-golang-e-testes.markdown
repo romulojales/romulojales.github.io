@@ -4,17 +4,15 @@ date: 2015-07-27 01:00:00
 description: "Iniciando o estudo de golang por testes"
 ---
 
-Todos concordam que ter testes é bom, que tdd melhora a qualidade do software e que CI é essencial. Tendo esta questão em 
-mente decidi que vou aprender GO (golang) pelo vies dos teste.
+Todos concordam que ter testes é bom, que tdd melhora a qualidade do software e que ter CI (continuos integration) é essencial. Tendo esta questão em mente, decidi que vou aprender GO (golang) pelo viés dos teste.
 
-Go já incorpora na sua filosofia como linguagem testes, sem a necessidade de usar bibliotecas ou comandos de terceiros.
+Go já incorpora em sua filosofia como linguagem testes. Sem a necessidade de usar bibliotecas ou comandos de terceiros.
 
-A idéia deste post é estudar inteiros e testes conjuntamente. Inteiro porque é um tipo muito simples e em geral o comportamento
- de inteiros é igual em todas as linguagens. Se começasse por string, por exemplo, eu não sei neste momento qual o
- resultado de uma operação de  "+" entre duas strings. Testando por um tipo cuja natureza tende a não mudar de linguagem para linguagem,
- posso explorar bem os conceitos de testes, o objetivo real deste post, sem precisar me ater a detalhes profundos da linguagem, como alocação de memória.
+A ideia deste post é estudar testes no contexto das quatro operações básicas de inteiros.
+
+Inteiro porque é um tipo muito simples e em geral o seu comportamento é igual em todas as linguagens. Se começasse por string, por exemplo, eu não sei, neste momento, qual o resultado ao aplicar o operador "+" entre duas strings. Testando por um tipo cuja natureza tende a não mudar de linguagem para linguagem, posso explorar bem os conceitos de testes, o objetivo primário deste post, sem precisar me ater a detalhes profundos da linguagem, como alocação de memória.
  
-Antes de começarmos o comando básico para executar testes em go é **test** (¬¬)
+Antes de começarmos, o comando básico para executar testes em go é **test** (¬¬)
 
 #Criando o primeiro caso de teste
 
@@ -66,7 +64,7 @@ x := 1 + 1
 
 Neste exemplo não foi necessário declarar previamente a variável nem seu tipo. O tipo é determinado pelo resultado da operação.
 
-Observe que ":=" é utilizado para quando a variável está sendo declarada pela primeira vez no escopo. No exemplo declaritivo
+Observe que ":=" é utilizado para quando a variável está sendo declarada pela primeira vez no escopo. No exemplo declarativo
 utilizei apenas "=".
 
 Uma das coisas bacanas do go, é que o compilador não permite declarar uma variável e não usa-la. Se complementarmos o arquivo inteiro_test.go com:
@@ -110,7 +108,7 @@ ok  	command-line-arguments	0.098s
 
 Amém! 1 + 1 é igual a 2 em go!
 
-Como go sabe que o teste não deu erro? Simplesmente se o teste não é interrompido o teste é satistório. Por isto
+Como go sabe que o teste não deu erro? Simplesmente se o teste não é interrompido o teste é satisfatório. Por isto
 o primeiro caso de teste, sem nada dentro da função, passou.
 
 Vamos forçar um erro. Vamos supor que eu pense que o operador "+" na verdade concatene os números, e 1 + 1 seja 11.
@@ -162,7 +160,7 @@ func soma(){
 }
 {% endhighlight %}
 
-Nada muito especial no arquivo. Observer que o nome do pacote é main. O mesmo do teste.
+Nada muito especial no arquivo. Observe que o nome do pacote é main. O mesmo do teste.
 
 Agora vou mudar o teste para usar a função soma.
 
@@ -192,7 +190,7 @@ Eu precisei mudar o comando primeiro, antes executávamos "go test inteiro_test.
 no contexto de execução o arquivo inteiro.go
 
 Observe que ao executar o comando o teste não deu erro. Por que a função não está pronta para a execução. Eu passo, dois 
-valores como parametro de soma. E a função não espera nada. Mudando a função para aceitar dois parametros:
+valores como parâmetro de soma. E a função não espera nada. Mudando a função para aceitar dois parâmetros:
 
 {% highlight go linenos %}
 package main
@@ -202,7 +200,7 @@ func soma(x int, y int){
 }
 {% endhighlight %}
 
-Lembrem-se que o tipo vem a direita da variável. A função está correta sintáticamente mas não está idiomática. O jeito GO
+Lembrem-se que o tipo vem a direita da variável. A função está correta sintaticamente mas não está idiomática. O jeito GO
 de escrever dois argumentos de mesmo tipo sequencialmente é: func soma(x, y int).
 
 Vejamos agora o que teremos como resposta ao teste:
@@ -275,7 +273,7 @@ exit status 1
 FAIL	_/inteiros	0.023s
 {% endhighlight %}
 
-De fato, o teste evidênciou um erro! Tem algo de errado na minha função soma. Olhando a função de perto vejo que somei duas
+De fato, o teste evidenciou um erro! Tem algo de errado na minha função soma. Olhando a função de perto vejo que somei duas
 vezes o número x. alterando para x + y o resultado do testes é satisfatório.
 
 #Dividindo ou testando um erro esperado
@@ -371,10 +369,10 @@ func divide(x int, y int) (int, error){
 
 
 
-Eu alterei a função para validar se o segundo parametro (divisor) é zero. Caso seja, err passa a ser ter como valor o erro declarado
+Eu alterei a função para validar se o segundo parâmetro (divisor) é zero. Caso seja, err passa a ser ter como valor o erro declarado
   errorDivisorZero, que contém a mensagem "O divisor da operação não pode ser zero"
   
-Caso o segundo parametro não seja zero, é realizado a divisão.
+Caso o segundo parâmetro não seja zero, é realizado a divisão.
 
 Agora precisamos alterar o teste para receber a função:
 
@@ -427,7 +425,7 @@ func subtrai(x, y int) int {
  return x - x
 }
 {% endhighlight %}
-
+http://romulojales.com/
 Mas, você não escreveu o teste! Como ser notificado que existe um trecho de código que não está sendo testado? Isto é o caso
 para a cobertura de testes. Lembra que eu falei que golang tem preocupação com testes desde o início?
 
