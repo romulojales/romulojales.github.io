@@ -16,7 +16,7 @@ Antes de começarmos, o comando básico para executar testes em go é **test** (
 
 #Criando o primeiro caso de teste
 
-Para criar um teste basta criar um arquivo com o sufixo \_test.go, no nosso caso vamos criar o arquivo inteiro_test.go.
+Para criar um teste basta criar um arquivo com o sufixo \_test.go. Para o nosso caso vamos criar o arquivo inteiro_test.go.
 
 Dentro do arquivo tenho:
 
@@ -30,10 +30,7 @@ func TestSoma(t *testing.T){
 }
 {% endhighlight %}
  
-Conforme mencionado no post do [hello world](/golang-hello-world/) a linha 1 indica que o arquivo está no pacote que contém
-o ponto inicial de execução de um programa. Já a linha importa para o contexto a biblioteca de testes. Observe que eu não
- precisei instalar nada para ter este módulo. Já a linha 5 declara o escopo de teste. Vamos por hora ignorar a sintaxe do argumento
-  do teste.
+Conforme mencionado no post do [hello world](/golang-hello-world/) a linha 1 indica que o arquivo está no pacote que contém o ponto inicial de execução de um programa. Já a linha importa para o contexto a biblioteca de testes. Observe que eu não precisei instalar nada para ter este módulo. Já a linha 5 declara o escopo de teste. Vamos por hora ignorar a sintaxe do argumento do teste.
   
 Podemos executar o comando test e observar o resultado:
 
@@ -42,12 +39,11 @@ go test inteiro_test.go
 ok  	command-line-arguments	0.074s
 {% endhighlight %}
 
-Como não escrevemos nada no escopo do teste TestSoma o resultado ok é esperado.
+Como não escrevemos nada no escopo do teste TestSoma o resultado ok é o esperado.
 
 #Testando soma de inteiros
 
-Vamos agora testar a soma de dois inteiros e atribuir a uma variável. O objetivo também é observar como é a sintaxe de inicialização
-de variáveis.
+Vamos agora testar a soma de dois inteiros e atribuir a uma variável. O objetivo também é observar como é a sintaxe de inicialização de variáveis.
 
 Pode-se iniciar uma variável declarando que é uma variável, seu nome e seu tipo. Exemplo:
  
@@ -56,6 +52,7 @@ var x int
 x = 1 + 1
 {% endhighlight %}
 
+**var** é a declaração de uma variável. **x** é o nome da variável e **int** é o tipo da variável.
 Ou pode-se usar outra sintaxe que aproveita o resultado de uma atribuição:
 
 {% highlight go linenos %}
@@ -64,10 +61,9 @@ x := 1 + 1
 
 Neste exemplo não foi necessário declarar previamente a variável nem seu tipo. O tipo é determinado pelo resultado da operação.
 
-Observe que ":=" é utilizado para quando a variável está sendo declarada pela primeira vez no escopo. No exemplo declarativo
-utilizei apenas "=".
+Observe que ":=" é utilizado para quando a variável está sendo declarada pela primeira vez no escopo. No exemplo declarativo utilizei apenas "=" porque x já estava inicializada.
 
-Uma das coisas bacanas do go, é que o compilador não permite declarar uma variável e não usa-la. Se complementarmos o arquivo inteiro_test.go com:
+Uma das coisas bacanas do go, é que o compilador não permite que você declare uma variável e não use. Se complementarmos o arquivo inteiro_test.go com:
 
 {% highlight go linenos %}
 package main
@@ -86,7 +82,7 @@ O compilador já retorna uma mensagem de erro, sem ao menos testar:
 FAIL	command-line-arguments [build failed]
 {% endhighlight %}
 
-Vamos agora criar um caso real de teste. Vamos ver se eu somar 1 + 1 go retorna 2.
+Vamos agora criar um caso real de teste. Vamos ver se ao somar 1 + 1 o resultado da operação retorna 2.
 
 {% highlight go linenos %}
 package main
@@ -108,7 +104,7 @@ ok  	command-line-arguments	0.098s
 
 Amém! 1 + 1 é igual a 2 em go!
 
-Como go sabe que o teste não deu erro? Simplesmente se o teste não é interrompido o teste é satisfatório. Por isto
+Como go sabe que o teste não deu erro? Simplesmente se o teste não é interrompido, o teste é satisfatório. Por isto
 o primeiro caso de teste, sem nada dentro da função, passou.
 
 Vamos forçar um erro. Vamos supor que eu pense que o operador "+" na verdade concatene os números, e 1 + 1 seja 11.
@@ -139,10 +135,9 @@ Então, 1 + 1 não é igual a 11. huuuum!
 O if do go não precisa por os argumentos de teste entre parenteses. Caso o argumento de teste seja verdadeiro vai entrar
  no bloco subsequente. Ai encontramos o na linha 8: t.Error.
  
-O t (minúsculo) é uma instancia de testing.T . O módulo testing possuem diversos tipos. Vamos começar pelo T. Você pode saber 
-sobre o tipo T fazendo: "godoc testing T"
+O t (minúsculo) é uma instancia de testing.T . O módulo testing possuem diversos tipos. Vamos começar pelo T. Você pode saber sobre o tipo T fazendo: "godoc testing T"
 
-O T é usado para controlar o estado dos testes e para formatar as mensagens. Possui diversos tipos de funções. No nosso
+O T é usado para controlar o estado dos testes e para formatar as mensagens e possui diversos tipos de funções. No nosso
 primeiro exemplo uso a função Error, que para a execução dos testes e imprime uma mensagem de erro passada como argumento.
  
 #Criando uma função que soma dois números
@@ -201,7 +196,7 @@ func soma(x int, y int){
 {% endhighlight %}
 
 Lembrem-se que o tipo vem a direita da variável. A função está correta sintaticamente mas não está idiomática. O jeito GO
-de escrever dois argumentos de mesmo tipo sequencialmente é: func soma(x, y int).
+de escrever dois argumentos de mesmo tipo sequencialmente é: **func soma(x, y int)**
 
 Vejamos agora o que teremos como resposta ao teste:
 
@@ -239,8 +234,7 @@ PASS
 ok  	_/inteiros	0.034s
 {% endhighlight %}
 
-Sucesso! Eu consegui escrever minha primeira função em go! Mas será que ela está correta? Vamos estressar um pouco mais a função. 
-Vamos somar valores diferentes.
+Sucesso! Eu consegui escrever minha primeira função em go! Mas será que ela está correta? Vamos estressar um pouco mais a função. Vamos somar valores diferentes.
 
 {% highlight go linenos %}
 package main
@@ -273,20 +267,18 @@ exit status 1
 FAIL	_/inteiros	0.023s
 {% endhighlight %}
 
-De fato, o teste evidenciou um erro! Tem algo de errado na minha função soma. Olhando a função de perto vejo que somei duas
-vezes o número x. alterando para x + y o resultado do testes é satisfatório.
+De fato, o teste evidenciou um erro! Tem algo de errado na minha função soma. Olhando a função de perto vejo que somei duas vezes o número x. alterando para x + y o resultado do testes é satisfatório.
 
 #Dividindo ou testando um erro esperado
 
-Vamos criar mais uma função, a divisão. Sabemos que a divisão por 0 não está definida. E é esperado que o código consiga
- validar este tipo de situação.
+Vamos criar mais uma função, a divisão. Sabemos que a divisão por 0 não está definida. Então é esperado que o código consiga validar este tipo de situação.
  
 Vamos criar a função divide:
 
 {% highlight go linenos %}
 package main
 
-func divide(x int, y int) int{
+func divide(x, y int) int{
  return x / y
 }
 {% endhighlight %}
@@ -334,8 +326,8 @@ panic: runtime error: integer divide by zero [recovered]
 ...
 {% endhighlight %}
 
-Então minha função não está pronta para um caso absurdo como divisão por zero. O que preciso fazer é preparar a função
-para retornar um erro numa validação do absurdo.
+Então minha função não está pronta para um caso absurdo como a divisão por zero. O que preciso fazer é preparar a função
+para retornar um erro de validação para o absurdo.
 
 Go, aceita saídas de multiplos tipos, alterando a função para:
 
@@ -345,8 +337,7 @@ func divide(x int, y int) (int, error){
 }
 {% endhighlight %}
 
-Agora a função retorna dois valores, o resultado da função e um possível erro.  Mas já estamos cientes que desta forma o teste
-não passará é necessário validar melhor a entrada, assim precisamos implementar a função de forma a não dar erro:
+Agora a função retorna dois valores, o resultado da função e um possível erro.  Mas já estamos cientes que desta forma o teste não passará pois é necessário validar melhor a entrada. Assim precisamos implementar a função de forma a não dar erro:
 
 {% highlight go linenos %}
 
@@ -369,12 +360,11 @@ func divide(x int, y int) (int, error){
 
 
 
-Eu alterei a função para validar se o segundo parâmetro (divisor) é zero. Caso seja, err passa a ser ter como valor o erro declarado
-  errorDivisorZero, que contém a mensagem "O divisor da operação não pode ser zero"
+Eu alterei a função para validar se o segundo parâmetro (divisor) é zero. Caso seja, err passa a ser ter como valor o erro declarado **errorDivisorZero**, que contém a mensagem "O divisor da operação não pode ser zero"
   
 Caso o segundo parâmetro não seja zero, é realizado a divisão.
 
-Agora precisamos alterar o teste para receber a função:
+Agora precisamos alterar o teste para o caso de retorno de uma mensagem de erro:
 
 
 {% highlight go linenos %}
@@ -396,8 +386,8 @@ exit status 1
 FAIL	_/inteiros	0.049s
 {% endhighlight %}
 
-Agora eu obtenho a mensagem de erro que programei. Mas o teste ainda falha. O que eu quero testar é se ao passar zero como 
-divisor acontece o erro esperado, assim:
+Agora eu obtenho a mensagem de erro que programei. Mas o teste ainda falha. O que eu quero testar é se ao passar zero como divisor e testar o erro esperado:
+
 {% highlight go linenos %}
 
 func TestDividePorZero(t *testing.T){
@@ -414,24 +404,111 @@ PASS
 ok  	_/inteiros	0.073s
 {% endhighlight %}
 
-Sucesso!
+Sucesso! Obtive o erro esperado quando tento fazer uma divisão por zero.
 
 #Cobertura de código, quando menos é menos menos mesmo!
 
-Das quatro operações básicas da matemática temos a subtração. Vamos escrever uma função para subtração:
+Das quatro operações básicas da matemática ainda temos a subtração e a multiplicação. Vamos escrever uma função para subtração:
 
 {% highlight go linenos %}
 func subtrai(x, y int) int {
  return x - x
 }
 {% endhighlight %}
-http://romulojales.com/
-Mas, você não escreveu o teste! Como ser notificado que existe um trecho de código que não está sendo testado? Isto é o caso
-para a cobertura de testes. Lembra que eu falei que golang tem preocupação com testes desde o início?
 
-Pois bem, o comando test aceita o argumento -cover para medir a cobertura de teste. Vejamos o que acontece quando eu executo os testes
-com a função subtrai declarada mas não testada, lembrando que as funções soma e divide estão no contexto:
+Testando...
 
+{% highlight bash %}
+go test
+PASS
+ok  	_/inteiros	0.073s
+{% endhighlight %}
+
+Epa, mas você não escreveu o teste! Como ser notificado que existe um trecho de código que não está sendo testado? Isto é o caso para a cobertura de testes! Lembra que eu falei que golang tem preocupação com testes desde o início?
+
+Pois bem, o comando test aceita o argumento -cover para medir a cobertura de teste. Mas antes precisamos ver o conceito de GOPATH.
+
+##GOPATH, primeiros passos
+
+Go necessita que você especifique um caminho absoluto para o ambiente do projeto. Este caminho será baseado as depedências do projeto, os comandos auxiliares, sua fonte de arquivos. Vamos criar um ambiente voltado para concluir o caso de testes:
+
+* crie um diretório onde você quiser chamado estudo-golang. Será a raiz do seu projeto
+* crie um diretório src e dentro dele crie um diretório inteiros
+* mova os arquivos inteiro.go e inteiro_test.go para dentro do diretório inteiros
+
+o resultado esperado é:
+
+{% highlight bash %}
+| - estudo-golang/
+   |- src/
+    |- inteiros/
+    	|- inteiro.go
+    	|- inteiro_test.go
+{% endhighlight %}
+
+ou você pode clonar meu [repositório no github](https://github.com/romulojales/estudos-golang) que já contém esta estrutura de arquivos;
+
+agora defina a variavel de ambiente GOPATH
+
+{% highlight bash %}
+export GOPATH=${PWD}
+{% endhighlight %}
+
+##Cover
+
+O go não trás na conjunto padrão de ferramentas a cobertura de testes. Para instalar a ferramenta cover faça:
+
+{% highlight bash %}
+go get golang.org/x/tools/cmd/cover
+{% endhighlight %}
+
+Caso tenha dificuldades com o seu sistema operacional não exite em comentar que tentarei te ajudar.
+
+Vejamos o que acontece quando eu executo os testes medindo a cobertura com a função subtrai declarada mas não testada, lembrando que as funções soma e divide estão no contexto:
+
+{% highlight bash %}
+go test inteiros -cover
+ok  	inteiros	0.002s	coverage: 87.5% of statements
+{% endhighlight %}
+
+Aha! O comando de teste agora diz que tenho 87.5% de cobertura. 
+
+Num projeto grande fica difícil saber qual o ponto do código não está sendo testado, vamos melhorar um pouco a saída do teste:
+
+primeiro gere um arquivo de saída:
+
+{% highlight bash %}
+go test -coverprofile=c.out inteiros
+{% endhighlight %}
+
+então abra no browser a interpretação da saída:
+
+{% highlight bash %}
+go tool cover -html=c.out
+{% endhighlight %}
+
+Como resultado:
+
+![cobertura do teste de inteiros](/assets/images/go-cov-inteiros.png =40)
+
+Observe que as linhas em vermelho são os trechos sem cobertura.
+
+Agora escrevo um teste para subtração:
+
+{% highlight go linenos %}
+
+func TestSubtrai(t *testing.T){
+	resultado := subtrai(4, 5)
+	if resultado != -1 {
+	 t.Error("curioso, na terra dos gophers 4-5 não é -1. é", resultado)
+	}
+}
+{% endhighlight %}
+
+{% highlight bash %}
+go test inteiros -cover
+ok  	inteiros	0.004s	coverage: 100.0% of statements
+{% endhighlight %}
 
 
 #Teste de performance
