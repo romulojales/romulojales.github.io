@@ -2,6 +2,7 @@
 title: "GOLANG: Tudo começa com um teste"
 date: 2015-07-27 01:00:00
 description: "Iniciando o estudo de golang por testes"
+comments: true
 ---
 
 Todos concordam que ter testes é bom, que TDD melhora a qualidade do software e que ter CI (continuos integration) é
