@@ -196,11 +196,10 @@ FAIL	_/inteiros [build failed]
 {% endhighlight %}
 
 Eu precisei mudar o comando primeiro, antes executávamos "go test inteiro_test.go" agora é apenas "go test" isto para
-incluir
-no contexto de execução o arquivo inteiro.go
+incluir no contexto de execução o arquivo inteiro.go
 
-Observe que ao executar o comando o teste não deu erro. Por que a função não está pronta para a execução. Eu passo, dois 
-valores como parâmetro de soma. E a função não espera nada. Mudando a função para aceitar dois parâmetros:
+Você observará que após mudar para apenas "go test" o comando não dará erro. Por que a função não 
+está pronta para a execução. Eu passo,  dois valores como parâmetro de soma. E a função não espera nada. Mudando a função para aceitar dois parâmetros:
 
 {% highlight go  %}
 package main
