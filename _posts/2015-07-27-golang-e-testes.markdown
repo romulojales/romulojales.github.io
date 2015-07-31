@@ -38,7 +38,7 @@ func TestSoma(t *testing.T){}
 Conforme mencionado no post do [hello world](/golang-hello-world/) a primeira linha indica que o arquivo está no pacote
  que
 contém o ponto inicial de execução de um programa. Já a linha importa para o contexto a biblioteca de testes. Observe
-que eu não precisei instalar nada para ter este módulo. Já a quinta linha declara o escopo de teste. Vamos por hora 
+que eu não precisei instalar nada para ter este módulo. Já a última linha declara o escopo de teste. Vamos por hora 
 ignorar a sintaxe do argumento do teste.
   
 Podemos executar o comando test e observar o resultado:
