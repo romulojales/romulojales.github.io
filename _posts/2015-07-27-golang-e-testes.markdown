@@ -4,8 +4,8 @@ date: 2015-07-27 01:00:00
 description: "Iniciando o estudo de golang por testes"
 ---
 
-Todos concordam que ter testes é bom, que tdd melhora a qualidade do software e que ter CI (continuos integration) é
-essencial. Tendo esta questão em mente, decidi que vou aprender GO (golang) pelo viés dos teste.
+Todos concordam que ter testes é bom, que TDD melhora a qualidade do software e que ter CI (continuos integration) é
+essencial. Tendo esta questão em mente, decidi que vou aprender GO (golang) pelo viés dos testes.
 
 Go já incorpora em sua filosofia como linguagem testes. Sem a necessidade de usar bibliotecas ou comandos de terceiros.
 
