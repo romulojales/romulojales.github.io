@@ -122,7 +122,7 @@ o primeiro caso de teste, sem nada dentro da função, passou.
 
 Vamos forçar um erro. Vamos supor que eu pense que o operador "+" na verdade concatene os números, e 1 + 1 seja 11.
 
-{% highlight go  %}
+{% highlight go  linenos %}
 package main
 
 import "testing"
