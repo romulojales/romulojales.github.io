@@ -10,7 +10,7 @@ layout: compress
   <meta name="name" content="{{ site.name }}"/>
   <meta name="author" content="Rômulo Jales"/>
   <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"/>
-  <meta name="keywords"  content="{% if page.keywords %}{% else %}{{ site.keywords }}{% endif %}"/>
+  <meta name="keywords"  content="{% if page.keywords %}{{page.keywords}}{% else %}{{ site.keywords }}{% endif %}"/>
   <meta name="robots" content="index, follow">
 
   <title>{{ site.name }}{% if page.title %} - {{ page.title }}{% endif %}</title>
