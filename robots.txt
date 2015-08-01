@@ -1,2 +1,3 @@
+Sitemap: http://romulojales.com/sitemap.xml
 User-agent: *
 Disallow:
