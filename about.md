@@ -2,6 +2,7 @@
 title: Sobre
 permalink: sobre/
 profile: true
+keywords: rômulo jales, sobre, biografia
 ---
   
 Olá meu nome é Rômulo Jales (¬¬), sou engenheiro da computação e tenho paixão por tecnologia e desenvolvimento de sistemas.

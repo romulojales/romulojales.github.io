@@ -2,7 +2,7 @@
 title:  "Golang: Hello World"
 date:   2015-07-23 23:00:00
 description: "hello world do golang"
-comments: true
+keywords: golang, hello world
 ---
 
 Geralmente, em linguagens de programação, iniciamos o aprendizado com o objetivo de escrever na tela do usuário "Hello World!".

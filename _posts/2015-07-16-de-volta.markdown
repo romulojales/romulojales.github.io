@@ -3,6 +3,7 @@ title:  "De volta aos trabalhos"
 date:   2015-07-16 02:06:00
 description: "tudo culpa do bill"
 comments: true
+keywords: blog
 ---
 
 Incentivado por [Willian Justen][bill-page] voltarei a blogar (Valeu Bill!). A ideia é manter o blog atualizado discutindo sempre o

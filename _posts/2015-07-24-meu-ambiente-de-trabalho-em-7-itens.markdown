@@ -2,7 +2,7 @@
 title:  "Meu ambiente de trabalho em 7 itens"
 date:   2015-07-25 02:00:00
 description: "O que uso para desenvolver"
-comments: true
+keywords: ambiente de trabalho, desktop, mac, spotify, jetbrains, pycharm, unix
 ---
 
 Respondendo ao desafio de [Davidson Fellipe][careca-link], que me fez há anos, segue os meus 7 itens de trabalho:

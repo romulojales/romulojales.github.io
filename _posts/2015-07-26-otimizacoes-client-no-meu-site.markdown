@@ -2,7 +2,7 @@
 title:  "Otimizações de performance para o meu site"
 date:   2015-07-26 02:06:00
 description: "O que fiz para otimizar o tempo de carregamento no meu site"
-comments: true
+keywords: otimização, client side, html, css, js, javascript
 ---
 
 #TL;TR

@@ -3,6 +3,7 @@ title:  "GOLANG: uma jornada se inicia"
 date:   2015-07-19 01:00:00
 description: "Um brevíssimo resumo da linguagem GO e porque irei a fundo nela."
 comments: true
+keywords: golang
 ---
 
 [GOLANG][go-link], ou simplesmente GO, é uma linguagem de programação desenvolvida pelo google para o google.
