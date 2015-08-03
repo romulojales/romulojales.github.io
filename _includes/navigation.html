@@ -1,7 +1,4 @@
 <nav class="main-nav">
-    {% if page.url != "/index.html" %}
-        <a href='{{ site.url }}/{{ page.about }}'> <span class="arrow">←</span> Home </a>
-    {% endif %}
     {% if page.url != "/sobre/" %}
         {% if site.aboutPage %}
             <a href='{{ site.url }}/sobre'>Sobre </a>
