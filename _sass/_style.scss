@@ -100,7 +100,7 @@ table {
 }
 
 /* Spacing */
-.post h1, h3, h4, h5, p, #post-body ul, #post-list li, pre {
+.post h1, h3, h4, h5, p, .post-body ul, #post-list li, pre {
   margin-bottom: 20px;
 }
 
@@ -249,7 +249,7 @@ li {
   list-style-position: inside;
 }
 
-#post-body, p {
+.post-meta, p {
   line-height: 1.7;
 }
 
@@ -527,7 +527,7 @@ Post List
   margin: 10px 0 0 0;
 }
 
-#post-meta {
+.post-meta {
   font-size: 13px;
   font-weight: bold;
   line-height: 1.4;
@@ -540,20 +540,20 @@ Post List
   border-bottom: 1px solid #eee;
 }
 
-#post-meta div span {
-  color: #aaa;
-  font-weight: 500;
-  display: block;
-}
+.post-meta {
+  div span {
+    color: #aaa;
+    font-weight: 500;
+    display: block;
+  }
+  div span.dark {
+    color: #1E2025;
 
-#post-meta div span.dark {
-  color: #1E2025;
-
-}
-
-#post-meta div {
-  margin: 0 25px 0 0;
-  float: left;
+  }
+  div {
+    margin: 0 25px 0 0;
+    float: left;
+  }
 }
 
 #sharing {
@@ -661,7 +661,7 @@ h2.month {
   color: #5694f1;
 }
 
-#post-meta img.avatar {
+.post-meta img.avatar {
   height: 36px;
   width: 36px;
   float: left;
@@ -727,7 +727,7 @@ h2.month {
   #post-list, #archive-list {
     margin-top: 0;
   }
-  #post-meta {
+  .post-meta {
     margin-top: 60px;
   }
 
