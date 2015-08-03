@@ -157,13 +157,13 @@ nav.main-nav a.cta {
 #wrapper {
   max-width: 1024px;
   margin: 0 auto;
-  padding: 60px 40px 100px 40px;
+  padding: 0 40px 100px 40px;
 }
 
 #wrapper.home {
   max-width: 1024px;
   margin: 0 auto;
-  padding: 0px 40px 20px 40px;
+  padding: 0 40px 20px 40px;
 }
 
 .home #avatar {
@@ -628,7 +628,7 @@ h2.month {
 /* Media Queries */
 @media screen and (max-width: 540px) {
   #wrapper {
-    padding: 20px 20px 20px 20px;
+    padding: 0 20px 20px 20px;
   }
   #header {
     margin-bottom: 60px;
