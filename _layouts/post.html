@@ -3,26 +3,18 @@ layout: default
 archive: true
 ---
 
-<article class="post">
+<article class="post" >
     <header>
         <h1>{{ page.title }}</h1>
-        <h2 class="headline">{{ page.date | date:"%B %-d, %Y" }}</h2>
+        <h2 class="headline">{{ page.date | date:"%d/%m/%Y" }}</h2>
     </header>
     <section class="post-body">
         {{content}}
     </section>
 </article>
 <footer class="post-meta clearfix">
-
-    <a href="http://twitter.com/{{ site.authorTwitter }}">
-        <img class="avatar" src="/assets/images/avatar.png">
-        <div>
-            <span class="dark">{{ site.author }}</span>
-            <span>{{ site.description }}</span>
-        </div>
-    </a>
-
-    <section id="sharing">
+    <section class="sharing">
+        <h3>Compartilhe</h3>
         {% include share.html %}
     </section>
 </footer>

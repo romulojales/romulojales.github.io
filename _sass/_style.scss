@@ -58,46 +58,6 @@ table {
   font-style: normal;
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "icons";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  text-align: center;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1em;
-}
-
-.icon-facebook:before {
-  content: '\e802';
-}
-
-.icon-facebook-squared:before {
-  content: '\e800';
-}
-
-.icon-twitter:before {
-  content: '\e801';
-}
-
-.icon-twitter-1:before {
-  content: '\e804';
-}
-
-.icon-facebook-circled:before {
-  content: '\e805';
-}
-
-.icon-twitter-circled:before {
-  content: '\e806';
-}
-
-.icon-facebook-rect:before {
-  content: '\e803';
-}
 
 /* Spacing */
 .post h1, h3, h4, h5, p, .post-body ul, #post-list li, pre {
@@ -130,7 +90,7 @@ h2 {
 }
 
 .profile #wrapper {
-  padding: 100px 40px 0px;
+  padding: 0 40px 0;
   max-width: 1024px;
   margin: 0 auto;
 }
@@ -528,19 +488,15 @@ Post List
 }
 
 .post-meta {
-  font-size: 13px;
+    font-size: 13px;
   font-weight: bold;
   line-height: 1.4;
   border-top: 1px solid #eee;
-  padding-top: 40px;
+  padding: 10px 0 40px 0;
   margin-bottom: 40px;
-  padding-bottom: 40px;
   margin-top: 40px;
   color: #444;
   border-bottom: 1px solid #eee;
-}
-
-.post-meta {
   div span {
     color: #aaa;
     font-weight: 500;
@@ -556,24 +512,13 @@ Post List
   }
 }
 
-#sharing {
-  float: right;
-  margin: -2px;
-}
-
-#sharing a {
-  font-size: 20px;
-  font-size: 23px;
-  margin-left: 1px;
-  margin-top: 4px;
-  color: #d4d4d4;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#sharing a:hover {
-  /*color: #444;*/
-  opacity: 0.8;
+.sharing {
+  text-align: center;
+  svg{
+    margin: .9375rem;
+    width: 35px;
+    height: 35px;
+  }
 }
 
 /* Post Navigation */
@@ -661,16 +606,6 @@ h2.month {
   color: #5694f1;
 }
 
-.post-meta img.avatar {
-  height: 36px;
-  width: 36px;
-  float: left;
-  border-radius: 50%;
-  margin-top: 3px;
-  margin-right: 20px;
-  box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee;
-}
-
 #post-list.archive.readmore h3 {
 
   font: 400 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -688,24 +623,6 @@ h2.month {
 
 #post-list.archive.readmore .dates {
   font: 300 16px/1.6 "Helvetica Neue", helvetica, Arial, sans-serif;
-}
-
-#sharing a.facebook {
-  background: #4361b3;
-}
-
-#sharing a.twitter {
-  background: #4fafed;
-}
-
-#sharing a {
-  font-size: 20px;
-  font-size: 13px;
-  font-weight: bold;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 4px;
-  margin-left: 2px;
 }
 
 /* Media Queries */
