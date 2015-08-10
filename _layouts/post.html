@@ -4,10 +4,12 @@ archive: true
 ---
 
 <article class="post" role="article" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <meta itemprop="datePublished" content="{{ page.date | date:'%Y-%m-%dT%H:%M:%SZ'}}"/>
 
     <header>
         <h1 itemprop="headline">{{ page.title }}</h1>
-        <h2 class="headline" itemprop="datePublished">{{ page.date | date:"%d/%m/%Y" }}</h2>
+        <h2 class="headline" itemprop="description">{{ page.description }}</h2>
+        <h3 >{{ page.date | date:"%d/%m/%Y" }}</h3>
     </header>
     <section class="post-body" itemprop="articleBody">
         {{content}}
