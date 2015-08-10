@@ -1,12 +1,14 @@
 <ul id="post-list">
     {% for post in paginator.posts %}
-        <li>
-            <a href='{{ post.url | prepend: site.url }}'><aside class="dates">{{ post.date | date:"%b %d, %Y"}}</aside></a>
-            <a href='{{ post.url | prepend: site.url }}'>{{ post.title }} <h2>{{ post.description }}</h2></a>
-        </li>
+    <li class="post" role="article" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <a itemprop="datePublished" href='{{ post.url | prepend: site.url }}'>
+            <aside class="dates">{{ post.date | date:"%b %d, %Y"}}</aside>
+        </a>
+        <a itemprop="headline" href='{{ post.url | prepend: site.url }}'>{{ post.title }}<h2 itemprop="description">{{post.description }}</h2></a>
+    </li>
     {% endfor %}
 </ul>
 
 {% if paginator.previous_page or paginator.next_page %}
-    {% include pagination.html %}
+{% include pagination.html %}
 {% endif %}
