@@ -133,13 +133,13 @@ estrutura mapeada.
 
 ##Algumas perguntas sobre o unmarshal
 
-**Mas se o Json tiver um atributo não mapeado, por exemplo tivermos mais uma chave "NaoEsperado" de valor 123?**
+**Mas se o Json tiver um atributo não mapeado? Por exemplo tivermos mais uma chave "NaoEsperado" de valor 123?**
 
 O Unmarshal só irá traduzir o que está na estrutura. A chave NaoEsperado será ignorada.
 
-**O Json não tiver um atributo que a estrutura depende, por exemplo não vir a chave "Integer"?**
+**Se o Json não tiver um atributo que a estrutura depende? Por exemplo não vir a chave "Integer"?**
 
-O Unmarshal dará erro na conversão. Para evitar que o programe falhe ou para contemplar casos onde um campo é opcional. a função Unmarshal utiliza "Tags", que funcionam como atributos de campo da estrutura, informando se um campo da estrutura deve ser ignorado completamente, apenas quando for vazio  pelo
+O Unmarshal dará erro na conversão. Para evitar que o programe falhe ou para contemplar casos onde um campo é opcional. a função Unmarshal utiliza "Tags", que funcionam como atributos de campo da estrutura, informando se um campo da estrutura deve ser ignorado completamente quando for vazio.
 
 
 {% highlight go lineno %}
@@ -150,3 +150,47 @@ type SimpleJsonStructure struct {
 		Boolean bool
 }
 {% endhighlight %}
+
+**Como trabalhar com chaves quando nome no json é diferente da estrutura?**
+
+Novamente usa-se tags: Observe o exemplo
+
+{% highlight go lineno %}
+type SimpleJsonStructure struct {
+	Integer  int         `json:"numero,omitempty"`
+	String   string      `json:"nome"`
+	Boolean  bool        `json:"ehBrasileiro"`
+}
+{% endhighlight %}
+
+No exemplo, o json terá as chavas numero (opcional), nome e ativo que são mapeados respectivamente para
+Integer, String, Boolean na estrutura.
+
+#Json genérico
+
+Num cenário em que não sabemos o que esperar de uma resposta, quando pode vir campos que você não conhece o formato ou quando você sabe que podem variar, usamos campos do tipo interface{}
+
+{% highlight go lineno %}
+type SimpleJsonStructure struct {
+	Integer  int         `json:"numero,omitempty"`
+	String   string      `json:"nome"`
+	Boolean  bool        `json:"ehBrasileiro"`
+	TheWorld interface{} `json:"oRestoDoMundo,omitempty"`
+}
+
+func main() {
+	simple := SimpleJsonStructure{}
+	json.Unmarshal([]byte(`{"numero": 1, "nome": "romulo", "ehBrasileiro": true, "oRestoDoMundo": {"umaString": "abc", "umArray":[1,2,3]}}`),
+		&simple)
+	fmt.Println(simple.TheWorld)
+
+	json.Unmarshal([]byte(`{"numero": 1, "nome": "romulo", "ehBrasileiro": true, "oRestoDoMundo": "o universo"}`),
+		&simple)
+	fmt.Println(simple.TheWorld)
+}
+{% endhighlight %}
+
+A saída esperada é: map[umArray:[1 2 3] umaString:abc] e para a segunda conversão é "o universo"
+
+Ou seja, não importa a estrutura da chave de json "oRestoDoMundo" como o tipo TheWorld na estrutura é interface{}
+será convertido para o tipo associado, garantindo a compatibilidade.
