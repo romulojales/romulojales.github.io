@@ -1,6 +1,6 @@
 ---
 title: "GOLANG: Trabalhando com JSON"
-date: 2015-08-19 01:00:00
+date: 2015-09-06 20:00:00
 description: "como trabalhar com json com golang"
 keywords: "golang, json, structs, marshal, unmarshal"
 ---
@@ -35,7 +35,7 @@ type SimpleJsonStructure struct {
 }
 {% endhighlight %}
 
-O código acima mostra uma estrutura de dados, passivel de virar um json, de nome SimpleJsonStructure.
+O código acima mostra uma estrutura de dados, passível de virar um json, de nome SimpleJsonStructure.
 A estrutura contém três atributos:
 
 * Integer do tipo inteiro (int)
@@ -69,7 +69,7 @@ Para criar um json:
 {% endhighlight %}
 
 Em Golang, não temos try/catch, o que temos é o retorno de erro. Sempre precisamos
-inspecionar o resultado do erro. Em geral, caso o erro seja igual a nil, siginifica que uma
+inspecionar o resultado do erro. Em geral, caso o erro seja igual a nil, significa que uma
 função executou com sucesso.
 
 O objeto simpleObjectJson é um array de bytes. Para vermos o que foi gerado é necessário converter para string
@@ -77,7 +77,7 @@ antes de executar o Print (linha 5). Com a saída esperada: {"Integer":123,"Stri
 
 ##Testes
 
-Para testar se a função foi gerada satisfatóriamente uma das formas de testar é comparar a saída com uma string.
+Para testar se a função foi gerada satisfatoriamente uma das formas de testar é comparar a saída com uma string.
 
 Porém, lembre-se que o retorno da função é um array de bytes.
 
@@ -106,10 +106,10 @@ operação inversa do Marshal, que por sua vez retorna um array de bytes, o prim
 o json a ser lido.
 
 Já o segundo argumento é o objeto que receberá o json, uma interface. Conforme eu disse, argumentos que
-são interface funcionam como uma assinatura polimorfica da função. Assim, o Unmarshal aceita qualquer tipo de *estrutura*.
+são interface funcionam como uma assinatura polimórfica da função. Assim, o Unmarshal aceita qualquer tipo de *estrutura*.
 
-Como no Marshal passamos uma estrutura que será traduzida num json. No Unmarshal a estrutura de parametro é acoplada ao formato do json.
-Ou seja, você precisa conhecer previamente a estrutura do json para decodifica-lo em um objeto.
+Como no Marshal passamos uma estrutura que será traduzida num json. No Unmarshal a estrutura de parâmetro é acoplada ao
+formato do json. Ou seja, você precisa conhecer previamente a estrutura do json para decodifica-lo em um objeto.
 
 Vejamos o teste:
 
@@ -128,8 +128,8 @@ err := json.Unmarshal(jsonObj, &simpleObject)
  }
 {% endhighlight %}
 
-Primeiro nós criamos a estrutura do json e instanciamos um objeto que irá receber os atributos. Então no Unmarshal, decodifico o json na
-estrutura mapeada.
+Primeiro nós criamos a estrutura do json e instanciamos um objeto que irá receber os atributos. Então no Unmarshal,
+decodifico o json na estrutura mapeada.
 
 ##Algumas perguntas sobre o unmarshal
 
@@ -139,7 +139,9 @@ O Unmarshal só irá traduzir o que está na estrutura. A chave NaoEsperado ser�
 
 **Se o Json não tiver um atributo que a estrutura depende? Por exemplo não vir a chave "Integer"?**
 
-O Unmarshal dará erro na conversão. Para evitar que o programe falhe ou para contemplar casos onde um campo é opcional. a função Unmarshal utiliza "Tags", que funcionam como atributos de campo da estrutura, informando se um campo da estrutura deve ser ignorado completamente quando for vazio.
+O Unmarshal dará erro na conversão. Para evitar que o programe falhe ou para contemplar casos onde um campo é opcional
+a função Unmarshal utiliza "Tags", que funcionam como atributos de campo da estrutura, informando se um campo da
+estrutura deve ser ignorado completamente quando for vazio.
 
 
 {% highlight go lineno %}
@@ -168,7 +170,8 @@ Integer, String, Boolean na estrutura.
 
 #Json genérico
 
-Num cenário em que não sabemos o que esperar de uma resposta, quando pode vir campos que você não conhece o formato ou quando você sabe que podem variar, usamos campos do tipo interface{}
+Num cenário em que não sabemos o que esperar de uma resposta, quando pode vir campos que você não conhece o formato ou
+quando você sabe que podem variar, usamos campos do tipo interface{}
 
 {% highlight go lineno %}
 type SimpleJsonStructure struct {
